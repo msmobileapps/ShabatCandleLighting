@@ -22,6 +22,7 @@
 		CA5F1D5124764F7D002C3D64 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5F1D5024764F7D002C3D64 /* SWRevealViewController.m */; };
 		CAB71362247A509200D7321E /* ShabatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55262F2473C8D5003CC91C /* ShabatItem.m */; };
 		CAB71363247A51D800D7321E /* NSString+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5F1D4224751BA4002C3D64 /* NSString+DateToString.m */; };
+		CAB71384247A9F8200D7321E /* cities_he.txt in Resources */ = {isa = PBXBuildFile; fileRef = CAB71383247A9F8200D7321E /* cities_he.txt */; };
 		CAF167002472A887009AE935 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF166FF2472A887009AE935 /* AppDelegate.m */; };
 		CAF167062472A887009AE935 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF167052472A887009AE935 /* MainViewController.m */; };
 		CAF167092472A887009AE935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF167072472A887009AE935 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		CAB7137F247A8D3D00D7321E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Main.strings; sourceTree = "<group>"; };
 		CAB71380247A8D3D00D7321E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		CAB71382247A8D5F00D7321E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		CAB71383247A9F8200D7321E /* cities_he.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities_he.txt; sourceTree = "<group>"; };
 		CAF166FB2472A887009AE935 /* Shabbat Candles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shabbat Candles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF166FE2472A887009AE935 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF166FF2472A887009AE935 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				CA5F1D4C24755924002C3D64 /* cities.txt */,
+				CAB71383247A9F8200D7321E /* cities_he.txt */,
 			);
 			name = Resourses;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				CAF1670E2472A889009AE935 /* LaunchScreen.storyboard in Resources */,
 				CA5F1D4D24755924002C3D64 /* cities.txt in Resources */,
+				CAB71384247A9F8200D7321E /* cities_he.txt in Resources */,
 				CAF1670B2472A889009AE935 /* Assets.xcassets in Resources */,
 				CAF167092472A887009AE935 /* Main.storyboard in Resources */,
 			);

@@ -17,7 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSMutableArray *countryNames;
 @property (nonatomic, strong) NSMutableArray *filteredCountryNames;
+
+@property (nonatomic, strong) NSMutableArray *countryNamesHe;
+@property (nonatomic, strong) NSMutableArray *filteredCountryNamesHe;
 @property BOOL isFiltered;
+
+@property (nonatomic, strong) NSString * language;
+
 
 @end
 

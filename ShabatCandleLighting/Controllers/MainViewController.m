@@ -23,42 +23,7 @@
     [super viewDidLoad];
     [self setHidenLabels];
     [self setupView];
-
-    NSString * language = [[NSLocale preferredLanguages] firstObject];
-
-
-
-
-
-    SWRevealViewController *revealViewController = self.revealViewController;
-
-
-
-    if ( revealViewController )
-    {
-        if ([language isEqualToString:@"he-IL"]) {
-
-            [self.selectCityButton addTarget:self.revealViewController action:@selector( rightRevealToggle: ) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
-            self.revealViewController.rearViewRevealWidth = self.view.frame.size.width - 100;
-
-            revealViewController.rightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyViewController"];
-;
-        } else {
-
-
-            [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
-            [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
-            self.revealViewController.rearViewRevealWidth = self.view.frame.size.width - 100;
-        }
-    }
-//
-//    [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
+    [self setupRevealVC];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
     selector:@selector(getCityNameFromSlideMenu:)
@@ -74,7 +39,7 @@
 
 -(void)fetchDataWithCityName: (NSString *) cityName {
     ItemsService *servise = ItemsService.new;
-    NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&city=%@&lg=h&leyning=off", cityName];
+    NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&geonameid=%@&lg=h&leyning=off", cityName];
 
     [servise fetchItemsWithUrlString:urlString success:^(ShabatItem * itemResult) {
         [self setNotHiddenLabels];
@@ -170,6 +135,25 @@
     self.candlesDateLabel.hidden = NO;
     self.parashatDateLabel.hidden = NO;
     self.avdalahDateLabel.hidden = NO;
+}
+
+-(void)setupRevealVC {
+    NSString * language = [[NSLocale preferredLanguages] firstObject];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        if ([language isEqualToString:@"he-IL"]) {
+
+            [self.selectCityButton addTarget:self.revealViewController action:@selector( rightRevealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
+            self.revealViewController.rearViewRevealWidth = self.view.frame.size.width - 100;
+            revealViewController.rightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyViewController"];
+        } else {
+            [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
+            self.revealViewController.rearViewRevealWidth = self.view.frame.size.width - 100;
+        }
+    }
 }
 
 

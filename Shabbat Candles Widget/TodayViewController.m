@@ -28,7 +28,7 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
     NSString *savedCity = [userDefaults stringForKey:@"slectedCityKey"];
 
-    NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&city=%@&lg=h&leyning=off", savedCity];
+    NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&geonameid=%@&lg=h&leyning=off", savedCity];
 
     [self fetchItemsWithUrlString:urlString success:^(ShabatItem *itemResult) {
         [self setNotHidenLabels];

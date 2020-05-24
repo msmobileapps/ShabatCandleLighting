@@ -20,12 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.language = [[NSLocale preferredLanguages] firstObject];
+
     [self loadCitiesListFromTxtFile];
+    [self loadCitiesHeListFromTxtFile];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
 
     self.filteredCountryNames = [[NSMutableArray alloc]init];
+}
+
+-(void)loadCitiesHeListFromTxtFile {
+    self.countryNamesHe = [[NSMutableArray alloc] init];
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"cities_he" ofType:@"txt"];
+    NSError *error;
+    NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
+
+    if (error)
+        NSLog(@"Error reading file: %@", error.localizedDescription);
+
+    NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
+    for (NSString* item in listArray) {
+        [self.countryNamesHe addObject:item];
+    }
 }
 
 -(void)loadCitiesListFromTxtFile {
@@ -39,8 +58,7 @@
 
     NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
     for (NSString* item in listArray) {
-        NSString *newItem = [self removeNumbersFromString:item];
-        [self.countryNames addObject:newItem];
+        [self.countryNames addObject:item];
     }
 }
 
@@ -54,13 +72,25 @@
         self.isFiltered = NO;
     } else {
         [self.filteredCountryNames removeAllObjects];
-        for (NSString *country in self.countryNames) {
-            NSRange range = [country rangeOfString:searchText options:NSCaseInsensitiveSearch];
-            if (range.location != NSNotFound) {
-                self.isFiltered = YES;
-                [self.filteredCountryNames addObject:country];
+
+        if ([self.language isEqualToString:@"he-IL"]) {
+            for (NSString *country in self.countryNamesHe) {
+                NSRange range = [country rangeOfString:searchText options:NSCaseInsensitiveSearch];
+                if (range.location != NSNotFound) {
+                    self.isFiltered = YES;
+                    [self.filteredCountryNames addObject:country];
+                }
+            }
+        } else {
+            for (NSString *country in self.countryNames) {
+                NSRange range = [country rangeOfString:searchText options:NSCaseInsensitiveSearch];
+                if (range.location != NSNotFound) {
+                    self.isFiltered = YES;
+                    [self.filteredCountryNames addObject:country];
+                }
             }
         }
+
     }
     [self.tableView reloadData];
 }
@@ -69,15 +99,25 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"countriesSelectionCellId" forIndexPath:indexPath];
     NSString *city;
-    if (self.isFiltered) {
-        city = self.filteredCountryNames[indexPath.row];
+
+    if ([self.language isEqualToString:@"he-IL"]) {
+        if (self.isFiltered) {
+            city = self.filteredCountryNames[indexPath.row];
+        } else {
+            city = self.countryNamesHe[indexPath.row];
+        }
+        city = [self removeNumbersFromString:city];
+        cell.textLabel.text = city;
     } else {
-        city = self.countryNames[indexPath.row];
+        if (self.isFiltered) {
+            city = self.filteredCountryNames[indexPath.row];
+        } else {
+            city = self.countryNames[indexPath.row];
+        }
+        city = [self removecharactersUntilThirdIndex:city];
+        city = [self removeNumbersFromString:city];
+        cell.textLabel.text = city;
     }
-
-
-
-    cell.textLabel.text = [self removecharactersUntilThirdIndex:city];
     return cell;
 }
 
@@ -94,13 +134,18 @@
     if (self.isFiltered) {
         city = self.filteredCountryNames[indexPath.row];
     } else {
-        city = self.countryNames[indexPath.row];
+        if ([self.language isEqualToString:@"he-IL"]) {
+            city = self.countryNamesHe[indexPath.row];
+        } else {
+            city = self.countryNames[indexPath.row];
+        }
     }
-    
-    NSString *cityStringWithoutGaps = [self removeGapsFromString:city];
+
+    NSString *cityStringWithoutGaps = [self getGeonameid:city];
     // save choosen city to user defaults
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
     [userDefaults setObject:cityStringWithoutGaps forKey:@"slectedCityKey"];
+   // [userDefaults setObject:cityStringWithoutGaps forKey:@"slectedCityKey"];
     [userDefaults synchronize];
     // dissmiss slide menu
     [self.revealViewController rightRevealToggleAnimated:YES];
@@ -118,14 +163,19 @@
     [self.tableView reloadData];
 }
 
--(NSString*)removeGapsFromString: (NSString*) cityString {
-    return [cityString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-}
+//-(NSString*)removeGapsFromString: (NSString*) cityString {
+//    return [cityString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+//}
 
 -(NSString*)removeNumbersFromString: (NSString*) cityString {
     NSCharacterSet *trim = [NSCharacterSet characterSetWithCharactersInString:@"1234567890|"];
     NSString *result = [[cityString componentsSeparatedByCharactersInSet:trim] componentsJoinedByString:@""];
     return result;
+}
+
+-(NSString*)getGeonameid: (NSString*) cityString {
+    NSArray* spliteArray = [cityString componentsSeparatedByString: @"|"];
+    return [spliteArray lastObject];
 }
 
 -(NSString*)removecharactersUntilThirdIndex: (NSString*) cityString {
