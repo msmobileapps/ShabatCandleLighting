@@ -7,28 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA5526282473B95F003CC91C /* UIView+UIView_CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5526272473B95F003CC91C /* UIView+UIView_CardView.m */; };
+		CA55262B2473BEE7003CC91C /* UIImage+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55262A2473BEE7003CC91C /* UIImage+CornerRadius.m */; };
+		CA5526302473C8D5003CC91C /* ShabatItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CA55262F2473C8D5003CC91C /* ShabatItem.m */; };
+		CA5526332473D4EE003CC91C /* ItemsService.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5526322473D4EE003CC91C /* ItemsService.m */; };
+		CA5F1D4324751BA4002C3D64 /* NSString+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5F1D4224751BA4002C3D64 /* NSString+DateToString.m */; };
+		CA5F1D4724752699002C3D64 /* CountriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5F1D4624752699002C3D64 /* CountriesListViewController.m */; };
+		CA5F1D4D24755924002C3D64 /* cities.txt in Resources */ = {isa = PBXBuildFile; fileRef = CA5F1D4C24755924002C3D64 /* cities.txt */; };
+		CA5F1D5124764F7D002C3D64 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5F1D5024764F7D002C3D64 /* SWRevealViewController.m */; };
 		CAF167002472A887009AE935 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF166FF2472A887009AE935 /* AppDelegate.m */; };
-		CAF167032472A887009AE935 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF167022472A887009AE935 /* SceneDelegate.m */; };
-		CAF167062472A887009AE935 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF167052472A887009AE935 /* ViewController.m */; };
+		CAF167062472A887009AE935 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF167052472A887009AE935 /* MainViewController.m */; };
 		CAF167092472A887009AE935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF167072472A887009AE935 /* Main.storyboard */; };
 		CAF1670B2472A889009AE935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF1670A2472A889009AE935 /* Assets.xcassets */; };
 		CAF1670E2472A889009AE935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF1670C2472A889009AE935 /* LaunchScreen.storyboard */; };
 		CAF167112472A889009AE935 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF167102472A889009AE935 /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CAF74B7224769BFB004A2612 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CA5526262473B95F003CC91C /* UIView+UIView_CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UIView_CardView.h"; sourceTree = "<group>"; };
+		CA5526272473B95F003CC91C /* UIView+UIView_CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIView_CardView.m"; sourceTree = "<group>"; };
+		CA5526292473BEE7003CC91C /* UIImage+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CornerRadius.h"; sourceTree = "<group>"; };
+		CA55262A2473BEE7003CC91C /* UIImage+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CornerRadius.m"; sourceTree = "<group>"; };
+		CA55262E2473C8D5003CC91C /* ShabatItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShabatItem.h; sourceTree = "<group>"; };
+		CA55262F2473C8D5003CC91C /* ShabatItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShabatItem.m; sourceTree = "<group>"; };
+		CA5526312473D4EE003CC91C /* ItemsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsService.h; sourceTree = "<group>"; usesTabs = 0; };
+		CA5526322473D4EE003CC91C /* ItemsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsService.m; sourceTree = "<group>"; };
+		CA5F1D4124751BA4002C3D64 /* NSString+DateToString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+DateToString.h"; sourceTree = "<group>"; };
+		CA5F1D4224751BA4002C3D64 /* NSString+DateToString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateToString.m"; sourceTree = "<group>"; };
+		CA5F1D4524752699002C3D64 /* CountriesListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountriesListViewController.h; sourceTree = "<group>"; };
+		CA5F1D4624752699002C3D64 /* CountriesListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountriesListViewController.m; sourceTree = "<group>"; };
+		CA5F1D4C24755924002C3D64 /* cities.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cities.txt; sourceTree = "<group>"; };
+		CA5F1D4F24764F7D002C3D64 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		CA5F1D5024764F7D002C3D64 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CAF166FB2472A887009AE935 /* ShabatCandleLighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShabatCandleLighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF166FE2472A887009AE935 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF166FF2472A887009AE935 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CAF167012472A887009AE935 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		CAF167022472A887009AE935 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		CAF167042472A887009AE935 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CAF167052472A887009AE935 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CAF167042472A887009AE935 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CAF167052472A887009AE935 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CAF167082472A887009AE935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAF1670A2472A889009AE935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF1670D2472A889009AE935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF1670F2472A889009AE935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF167102472A889009AE935 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CAF74B6524769BFB004A2612 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,10 +76,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA5526212473B7AC003CC91C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA5526262473B95F003CC91C /* UIView+UIView_CardView.h */,
+				CA5526272473B95F003CC91C /* UIView+UIView_CardView.m */,
+				CA5526292473BEE7003CC91C /* UIImage+CornerRadius.h */,
+				CA55262A2473BEE7003CC91C /* UIImage+CornerRadius.m */,
+				CA5F1D4124751BA4002C3D64 /* NSString+DateToString.h */,
+				CA5F1D4224751BA4002C3D64 /* NSString+DateToString.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CA55262C2473C36D003CC91C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA55262E2473C8D5003CC91C /* ShabatItem.h */,
+				CA55262F2473C8D5003CC91C /* ShabatItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CA55262D2473C37E003CC91C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CA5526312473D4EE003CC91C /* ItemsService.h */,
+				CA5526322473D4EE003CC91C /* ItemsService.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		CA5F1D4424752664002C3D64 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA5F1D4E24764F7D002C3D64 /* SWRevealViewController */,
+				CAF167042472A887009AE935 /* MainViewController.h */,
+				CAF167052472A887009AE935 /* MainViewController.m */,
+				CA5F1D4524752699002C3D64 /* CountriesListViewController.h */,
+				CA5F1D4624752699002C3D64 /* CountriesListViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA5F1D4B247558FD002C3D64 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				CA5F1D4C24755924002C3D64 /* cities.txt */,
+			);
+			name = Resourses;
+			sourceTree = "<group>";
+		};
+		CA5F1D4E24764F7D002C3D64 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA5F1D4F24764F7D002C3D64 /* SWRevealViewController.h */,
+				CA5F1D5024764F7D002C3D64 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		CAF166F22472A887009AE935 = {
 			isa = PBXGroup;
 			children = (
 				CAF166FD2472A887009AE935 /* ShabatCandleLighting */,
+				CAF74B6424769BFB004A2612 /* Frameworks */,
 				CAF166FC2472A887009AE935 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,19 +156,36 @@
 		CAF166FD2472A887009AE935 /* ShabatCandleLighting */ = {
 			isa = PBXGroup;
 			children = (
+				CA5F1D4B247558FD002C3D64 /* Resourses */,
+				CA5F1D4424752664002C3D64 /* Controllers */,
+				CA55262D2473C37E003CC91C /* API */,
+				CA55262C2473C36D003CC91C /* Models */,
+				CA5526212473B7AC003CC91C /* Extensions */,
+				CAF167172472A8F9009AE935 /* Helpers */,
+				CAF167072472A887009AE935 /* Main.storyboard */,
+			);
+			path = ShabatCandleLighting;
+			sourceTree = "<group>";
+		};
+		CAF167172472A8F9009AE935 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				CAF166FE2472A887009AE935 /* AppDelegate.h */,
 				CAF166FF2472A887009AE935 /* AppDelegate.m */,
-				CAF167012472A887009AE935 /* SceneDelegate.h */,
-				CAF167022472A887009AE935 /* SceneDelegate.m */,
-				CAF167042472A887009AE935 /* ViewController.h */,
-				CAF167052472A887009AE935 /* ViewController.m */,
-				CAF167072472A887009AE935 /* Main.storyboard */,
 				CAF1670A2472A889009AE935 /* Assets.xcassets */,
 				CAF1670C2472A889009AE935 /* LaunchScreen.storyboard */,
 				CAF1670F2472A889009AE935 /* Info.plist */,
 				CAF167102472A889009AE935 /* main.m */,
 			);
-			path = ShabatCandleLighting;
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CAF74B6424769BFB004A2612 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAF74B6524769BFB004A2612 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +198,7 @@
 				CAF166F72472A887009AE935 /* Sources */,
 				CAF166F82472A887009AE935 /* Frameworks */,
 				CAF166F92472A887009AE935 /* Resources */,
+				CAF74B7224769BFB004A2612 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -102,11 +215,13 @@
 		CAF166F32472A887009AE935 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Nikita Koniukh";
 				TargetAttributes = {
 					CAF166FA2472A887009AE935 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -134,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF1670E2472A889009AE935 /* LaunchScreen.storyboard in Resources */,
+				CA5F1D4D24755924002C3D64 /* cities.txt in Resources */,
 				CAF1670B2472A889009AE935 /* Assets.xcassets in Resources */,
 				CAF167092472A887009AE935 /* Main.storyboard in Resources */,
 			);
@@ -146,10 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF167062472A887009AE935 /* ViewController.m in Sources */,
+				CA5F1D4724752699002C3D64 /* CountriesListViewController.m in Sources */,
+				CA5526282473B95F003CC91C /* UIView+UIView_CardView.m in Sources */,
+				CAF167062472A887009AE935 /* MainViewController.m in Sources */,
+				CA5526332473D4EE003CC91C /* ItemsService.m in Sources */,
+				CA55262B2473BEE7003CC91C /* UIImage+CornerRadius.m in Sources */,
+				CA5526302473C8D5003CC91C /* ShabatItem.m in Sources */,
+				CA5F1D4324751BA4002C3D64 /* NSString+DateToString.m in Sources */,
+				CA5F1D5124764F7D002C3D64 /* SWRevealViewController.m in Sources */,
 				CAF167002472A887009AE935 /* AppDelegate.m in Sources */,
 				CAF167112472A889009AE935 /* main.m in Sources */,
-				CAF167032472A887009AE935 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,15 +411,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ShabatCandleLighting/ShabatCandleLighting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3K3Q4658XN;
 				INFOPLIST_FILE = ShabatCandleLighting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapps.ShabatCandleLighting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,15 +433,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ShabatCandleLighting/ShabatCandleLighting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3K3Q4658XN;
 				INFOPLIST_FILE = ShabatCandleLighting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapps.ShabatCandleLighting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
