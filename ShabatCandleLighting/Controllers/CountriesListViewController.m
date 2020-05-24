@@ -45,12 +45,13 @@
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    self.isFiltered = YES;
+    self.isFiltered = NO;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if ([searchText length] == 0) {
         [self.filteredCountryNames removeAllObjects];
+        self.isFiltered = NO;
     } else {
         [self.filteredCountryNames removeAllObjects];
         for (NSString *country in self.countryNames) {
@@ -98,7 +99,7 @@
     
     NSString *cityStringWithoutGaps = [self removeGapsFromString:city];
     // save choosen city to user defaults
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
     [userDefaults setObject:cityStringWithoutGaps forKey:@"slectedCityKey"];
     [userDefaults synchronize];
     // dissmiss slide menu

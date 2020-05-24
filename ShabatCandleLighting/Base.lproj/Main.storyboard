@@ -38,7 +38,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-eS-xhD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candle lighting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZf-lw-eVf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shabbat Candles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZf-lw-eVf">
                                         <rect key="frame" x="16" y="42" width="382" height="37"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="27"/>
                                         <color key="textColor" red="0.91764705882352937" green="0.88627450980392153" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,6 +347,7 @@
                         <outlet property="parashatDateLabel" destination="7TI-8E-NXK" id="Zn9-9F-cSP"/>
                         <outlet property="parashatImage" destination="Zr3-PM-7MH" id="EAv-0T-0G9"/>
                         <outlet property="parashatTitleLabel" destination="FzU-Eb-3rR" id="1PO-hd-d0t"/>
+                        <outlet property="parashatWrapperContainer" destination="SHf-mD-SRw" id="vpw-oJ-yKa"/>
                         <outlet property="selectCityButton" destination="Nu4-1Q-qQz" id="1YE-2E-rBn"/>
                         <outlet property="shaabbatStartContainerView" destination="hgU-11-j5e" id="rlc-vz-w2b"/>
                         <outlet property="shabbatStartImage" destination="Gud-LC-1TW" id="TZ3-ef-WA9"/>
@@ -388,7 +389,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwL-7R-Hu8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwL-7R-Hu8">
                                 <rect key="frame" x="8" y="52" width="398" height="48"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
                                 <color key="textColor" red="0.0" green="0.1862831116" blue="0.29020494219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -18,15 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setHiddenLabels];
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     [self setupView];
-    NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&city=%@&lg=h&leyning=off", @"GB-London"];
+
+
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
+    NSString *savedCity = [userDefaults stringForKey:@"slectedCityKey"];
+
+    NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&city=%@&lg=h&leyning=off", savedCity];
 
     [self fetchItemsWithUrlString:urlString success:^(ShabatItem *itemResult) {
-
+        [self setNotHidenLabels];
         if ([itemResult.category isEqual: @"candles"]) {
             self.titleLabel.text = itemResult.hebrewTitle;
             self.timeLabel.text = [self getTimeFromString:itemResult.date];
@@ -102,6 +107,18 @@
     [dateFormatter setDateFormat: @"hh:mm a"];
     NSString *stringTime = [dateFormatter stringFromDate:date];
     return stringTime;
+}
+
+-(void)setHiddenLabels {
+    self.titleLabel.hidden = YES;
+    self.timeLabel.hidden = YES;
+    self.dateLabel.hidden = YES;
+}
+
+-(void)setNotHidenLabels {
+    self.titleLabel.hidden = NO;
+    self.timeLabel.hidden = NO;
+    self.dateLabel.hidden = NO;
 }
 
 @end

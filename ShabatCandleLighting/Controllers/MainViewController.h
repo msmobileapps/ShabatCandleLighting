@@ -35,6 +35,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentCityLabel;
 @property (strong, nonatomic) IBOutlet UIButton *selectCityButton;
 
+@property (strong, nonatomic) IBOutlet UIView *parashatWrapperContainer;
+
+
+
 @property (nonatomic, strong) CountriesListViewController *countryPicker;
 
 @property NSString *cityName;

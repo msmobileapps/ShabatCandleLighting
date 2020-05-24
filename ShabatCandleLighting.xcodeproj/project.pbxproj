@@ -75,7 +75,13 @@
 		CA5F1D4C24755924002C3D64 /* cities.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cities.txt; sourceTree = "<group>"; };
 		CA5F1D4F24764F7D002C3D64 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CA5F1D5024764F7D002C3D64 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		CAF166FB2472A887009AE935 /* ShabatCandleLighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShabatCandleLighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB7137C247A658100D7321E /* ShabatCandleLighting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShabatCandleLighting.entitlements; sourceTree = "<group>"; };
+		CAB7137D247A80CC00D7321E /* Shabbat Candles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Shabbat Candles.entitlements"; sourceTree = "<group>"; };
+		CAB7137E247A8D3D00D7321E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CAB7137F247A8D3D00D7321E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Main.strings; sourceTree = "<group>"; };
+		CAB71380247A8D3D00D7321E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		CAB71382247A8D5F00D7321E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		CAF166FB2472A887009AE935 /* Shabbat Candles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shabbat Candles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF166FE2472A887009AE935 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF166FF2472A887009AE935 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CAF167042472A887009AE935 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 		CA08EFD8247A4954001D7714 /* Shabbat Candles Widget */ = {
 			isa = PBXGroup;
 			children = (
+				CAB7137D247A80CC00D7321E /* Shabbat Candles.entitlements */,
 				CA08EFD9247A4955001D7714 /* TodayViewController.h */,
 				CA08EFDA247A4955001D7714 /* TodayViewController.m */,
 				CA08EFDC247A4955001D7714 /* MainInterface.storyboard */,
@@ -191,7 +198,7 @@
 		CAF166FC2472A887009AE935 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAF166FB2472A887009AE935 /* ShabatCandleLighting.app */,
+				CAF166FB2472A887009AE935 /* Shabbat Candles.app */,
 				CA08EFD6247A4954001D7714 /* Shabbat Candles.appex */,
 			);
 			name = Products;
@@ -200,6 +207,7 @@
 		CAF166FD2472A887009AE935 /* ShabatCandleLighting */ = {
 			isa = PBXGroup;
 			children = (
+				CAB7137C247A658100D7321E /* ShabatCandleLighting.entitlements */,
 				CA5F1D4B247558FD002C3D64 /* Resourses */,
 				CA5F1D4424752664002C3D64 /* Controllers */,
 				CA55262D2473C37E003CC91C /* API */,
@@ -268,7 +276,7 @@
 			);
 			name = ShabatCandleLighting;
 			productName = ShabatCandleLighting;
-			productReference = CAF166FB2472A887009AE935 /* ShabatCandleLighting.app */;
+			productReference = CAF166FB2472A887009AE935 /* Shabbat Candles.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -277,9 +285,6 @@
 		CAF166F32472A887009AE935 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				KnownAssetTags = (
-					New,
-				);
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Nikita Koniukh";
@@ -300,6 +305,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = CAF166F22472A887009AE935;
 			productRefGroup = CAF166FC2472A887009AE935 /* Products */;
@@ -378,6 +384,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CA08EFDD247A4955001D7714 /* Base */,
+				CAB71380247A8D3D00D7321E /* he */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -386,6 +393,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				CAF167082472A887009AE935 /* Base */,
+				CAB7137F247A8D3D00D7321E /* he */,
+				CAB71382247A8D5F00D7321E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -394,6 +403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CAF1670D2472A889009AE935 /* Base */,
+				CAB7137E247A8D3D00D7321E /* he */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -404,6 +414,7 @@
 		CA08EFE4247A4955001D7714 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Shabbat Candles Widget/Shabbat Candles.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3K3Q4658XN;
 				INFOPLIST_FILE = "Shabbat Candles Widget/Info.plist";
@@ -415,13 +426,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapps.ShabatCandleLighting.Shabbat-Candles-Widget";
 				PRODUCT_NAME = "Shabbat Candles";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CA08EFE5247A4955001D7714 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Shabbat Candles Widget/Shabbat Candles.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3K3Q4658XN;
 				INFOPLIST_FILE = "Shabbat Candles Widget/Info.plist";
@@ -433,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.msapps.ShabatCandleLighting.Shabbat-Candles-Widget";
 				PRODUCT_NAME = "Shabbat Candles";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -441,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -499,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -552,7 +566,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ShabatCandleLighting/ShabatCandleLighting.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3K3Q4658XN;
 				INFOPLIST_FILE = ShabatCandleLighting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -561,10 +578,11 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapps.ShabatCandleLighting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Shabbat Candles";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -573,7 +591,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ShabatCandleLighting/ShabatCandleLighting.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3K3Q4658XN;
 				INFOPLIST_FILE = ShabatCandleLighting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -582,9 +603,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapps.ShabatCandleLighting;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Shabbat Candles";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

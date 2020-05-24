@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,9 +13,40 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="111" translatesAutoresizingMaskIntoConstraints="NO" id="Nda-3Z-Uwg">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DsK-hC-dRx"/>
+                                    <constraint firstAttribute="width" constant="200" id="Oos-Lt-yEl"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msappsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vdZ-oo-Vmp">
+                                <rect key="frame" x="140.5" y="810" width="133" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="H2q-YK-bT8"/>
+                                    <constraint firstAttribute="height" constant="52" id="bCZ-4c-V1r"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-Oe-L0V">
+                                <rect key="frame" x="8" y="782.5" width="398" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.91879922150000004" green="0.8889473081" blue="0.70895963910000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.1862831116" blue="0.29020494219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nda-3Z-Uwg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9kB-xP-4bl"/>
+                            <constraint firstItem="Nda-3Z-Uwg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S34-Hz-eZV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A8W-Oe-L0V" secondAttribute="trailing" constant="8" id="ham-Tj-6Vb"/>
+                            <constraint firstItem="vdZ-oo-Vmp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jL5-Jn-ViV"/>
+                            <constraint firstItem="vdZ-oo-Vmp" firstAttribute="top" secondItem="A8W-Oe-L0V" secondAttribute="bottom" id="ocK-GK-I6n"/>
+                            <constraint firstItem="A8W-Oe-L0V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="qJd-I2-RxS"/>
+                            <constraint firstItem="vdZ-oo-Vmp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="snu-bi-aa3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +55,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="111" width="85" height="85.5"/>
+        <image name="msappsLogo" width="257" height="62.5"/>
+    </resources>
 </document>

@@ -21,10 +21,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setHidenLabels];
     [self setupView];
 
-    [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    NSString * language = [[NSLocale preferredLanguages] firstObject];
+
+
+
+
+
+    SWRevealViewController *revealViewController = self.revealViewController;
+
+
+
+    if ( revealViewController )
+    {
+        if ([language isEqualToString:@"he-IL"]) {
+
+            [self.selectCityButton addTarget:self.revealViewController action:@selector( rightRevealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
+            self.revealViewController.rearViewRevealWidth = self.view.frame.size.width - 100;
+
+            revealViewController.rightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyViewController"];
+;
+        } else {
+
+
+            [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+
+            [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addGestureRecognizer:self.revealViewController.tapGestureRecognizer];
+            self.revealViewController.rearViewRevealWidth = self.view.frame.size.width - 100;
+        }
+    }
+//
+//    [self.selectCityButton addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -44,12 +77,14 @@
     NSString *urlString = [NSString stringWithFormat: @"https://www.hebcal.com/shabbat/?cfg=json&city=%@&lg=h&leyning=off", cityName];
 
     [servise fetchItemsWithUrlString:urlString success:^(ShabatItem * itemResult) {
+        [self setNotHiddenLabels];
         self.currentCityLabel.text = itemResult.country;
+
         if ([itemResult.category isEqual: @"candles"]) {
             self.candlesTitleLabel.text = itemResult.hebrewTitle;
             self.candlesTimeLabel.text = [self getTimeFromString:itemResult.date];
             self.candlesDateLabel.text = [self getDateFromString:itemResult.date];
-        } else if ([itemResult.category isEqual: @"parashat"]) {
+        } else if ([itemResult.category isEqual: @"parashat"] || [itemResult.category isEqual: @"holiday"]) {
             self.parashatTitleLabel.text = itemResult.hebrewTitle;
             self.parashatDateLabel.text = [self getDateFromString:itemResult.date];
         } else if ([itemResult.category isEqual: @"havdalah"]) {
@@ -64,7 +99,6 @@
 }
 
 
-
 -(void)setupView {
     [self.shaabbatStartContainerView addCardViewForContainer];
     [self.parachatContainer addCardViewForContainer];
@@ -74,11 +108,11 @@
     [self.avdalahImage setCornerRadiusforImage];
     self.isCountryListShowed = NO;
 
-    NSString *savedCity = [[NSUserDefaults standardUserDefaults]
-                           stringForKey:@"slectedCityKey"];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
+    NSString *savedCity = [userDefaults objectForKey:@"slectedCityKey"];
     if (savedCity == nil) {
        [self.revealViewController revealToggleAnimated:YES];
-       [self.revealViewController setFrontViewController:self];
+        [self.revealViewController setFrontViewController:self];
     } else {
         [self fetchDataWithCityName:savedCity];
     }
@@ -88,6 +122,10 @@
     NSDate *date = [dateString getDateFromString];
     
     NSDateFormatter *dateFormatter = NSDateFormatter.new;
+    NSString * language = [[NSLocale preferredLanguages] firstObject];
+    NSLocale *locale = [[NSLocale alloc]
+                         initWithLocaleIdentifier:language];
+    [dateFormatter setLocale:locale];
     [dateFormatter setDateFormat:@"EEEE, dd MMM yyyy"];
     NSString *stringDate = [dateFormatter stringFromDate:date];
     return stringDate;
@@ -97,6 +135,10 @@
     NSString *stringWithoutLocale = [dateString substringToIndex:[dateString length] - 6];
     NSDate *date = [stringWithoutLocale getDateFromString];
     NSDateFormatter *dateFormatter = NSDateFormatter.new;
+    NSString * language = [[NSLocale preferredLanguages] firstObject];
+    NSLocale *locale = [[NSLocale alloc]
+                         initWithLocaleIdentifier:language];
+    [dateFormatter setLocale:locale];
     [dateFormatter setDateFormat: @"hh:mm a"];
     NSString *stringTime = [dateFormatter stringFromDate:date];
     return stringTime;
@@ -106,6 +148,28 @@
     NSURL *url = [[NSURL alloc]initWithString:@"https://msapps.mobi/#about-us"];
     SFSafariViewController *sfvc = [[SFSafariViewController alloc] initWithURL:url];
     [self presentViewController:sfvc animated:YES completion:nil];
+}
+
+-(void) setHidenLabels {
+    self.candlesTitleLabel.hidden = YES;
+    self.parashatTitleLabel.hidden = YES;
+    self.avdalahTitleLabel.hidden = YES;
+    self.candlesTimeLabel.hidden = YES;
+    self.avdalaTimeLabel.hidden = YES;
+    self.candlesDateLabel.hidden = YES;
+    self.parashatDateLabel.hidden = YES;
+    self.avdalahDateLabel.hidden = YES;
+}
+
+-(void) setNotHiddenLabels {
+    self.candlesTitleLabel.hidden = NO;
+    self.parashatTitleLabel.hidden = NO;
+    self.avdalahTitleLabel.hidden = NO;
+    self.candlesTimeLabel.hidden = NO;
+    self.avdalaTimeLabel.hidden = NO;
+    self.candlesDateLabel.hidden = NO;
+    self.parashatDateLabel.hidden = NO;
+    self.avdalahDateLabel.hidden = NO;
 }
 
 
