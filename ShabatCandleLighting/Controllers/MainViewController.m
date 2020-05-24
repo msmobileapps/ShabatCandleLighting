@@ -11,6 +11,7 @@
 #import "ItemsService.h"
 #import "NSString+DateToString.h"
 #import "SWRevealViewController.h"
+#import <SafariServices/SafariServices.h>
 
 @interface MainViewController ()
 
@@ -101,6 +102,11 @@
     return stringTime;
 }
 
+- (IBAction)goToMSAppsWebPage:(UIButton *)sender {
+    NSURL *url = [[NSURL alloc]initWithString:@"https://msapps.mobi/#about-us"];
+    SFSafariViewController *sfvc = [[SFSafariViewController alloc] initWithURL:url];
+    [self presentViewController:sfvc animated:YES completion:nil];
+}
 
 
 @end
