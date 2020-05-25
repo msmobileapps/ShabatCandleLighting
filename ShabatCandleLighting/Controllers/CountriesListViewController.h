@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShabatCandleLighting-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *filteredCountryNamesHe;
 @property BOOL isFiltered;
 
-@property (nonatomic, strong) NSString * language;
+@property (nonatomic, strong) NSString * deviceLanguage;
+@property (nonatomic, strong) Constants *constants;
 
 
 @end

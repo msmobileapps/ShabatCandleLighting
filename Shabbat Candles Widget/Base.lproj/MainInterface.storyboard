@@ -18,22 +18,22 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candles_background_widget" translatesAutoresizingMaskIntoConstraints="NO" id="Aqr-f1-39T">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="MvH-GX-cQx">
-                                <rect key="frame" x="220" y="4" width="92" height="87"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MvH-GX-cQx">
+                                <rect key="frame" x="16" y="4" width="92" height="87"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="הדלקת" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08j-WG-LBk">
-                                        <rect key="frame" x="27.5" y="0.0" width="64.5" height="30.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="הדלקת" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08j-WG-LBk">
+                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="30.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRg-yT-vQD">
-                                        <rect key="frame" x="22" y="30.5" width="70" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:03" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRg-yT-vQD">
+                                        <rect key="frame" x="0.0" y="30.5" width="70" height="33"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" red="0.98823529409999999" green="0.74901960779999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-05-22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUl-oF-9RB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-05-22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUl-oF-9RB">
                                         <rect key="frame" x="0.0" y="63.5" width="92" height="23.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" red="0.98823529409999999" green="0.74901960779999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,7 +42,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nrj-Fq-X91">
-                                <rect key="frame" x="8" y="4" width="58" height="25"/>
+                                <rect key="frame" x="246" y="11" width="58" height="25"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shabbat_filled" translatesAutoresizingMaskIntoConstraints="NO" id="qa5-6g-zer">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -64,12 +64,12 @@
                         <constraints>
                             <constraint firstItem="Aqr-f1-39T" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="9gr-2u-Qko"/>
                             <constraint firstItem="Aqr-f1-39T" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="GpC-Hg-jGz"/>
+                            <constraint firstItem="MvH-GX-cQx" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="Jjx-tC-0Wc"/>
                             <constraint firstItem="Aqr-f1-39T" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Los-Pw-iJp"/>
-                            <constraint firstItem="Nrj-Fq-X91" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="Paj-rI-jkC"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="MvH-GX-cQx" secondAttribute="trailing" constant="8" id="dzf-Pq-gPH"/>
-                            <constraint firstItem="Nrj-Fq-X91" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="nLc-mE-IwZ"/>
+                            <constraint firstItem="MvH-GX-cQx" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="VbT-4U-pcE"/>
+                            <constraint firstItem="Nrj-Fq-X91" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="11" id="W26-sT-i3G"/>
+                            <constraint firstAttribute="trailing" secondItem="Nrj-Fq-X91" secondAttribute="trailing" constant="16" id="sVb-D7-XaD"/>
                             <constraint firstItem="Aqr-f1-39T" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="x7p-mR-85A"/>
-                            <constraint firstItem="MvH-GX-cQx" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="z2R-gU-2Dm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -77,6 +77,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="100"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="Aqr-f1-39T" id="oc6-ZK-dXD"/>
                         <outlet property="dateLabel" destination="qUl-oF-9RB" id="OxO-qk-fP7"/>
                         <outlet property="timeLabel" destination="WRg-yT-vQD" id="xj7-mg-FRR"/>
                         <outlet property="titleLabel" destination="08j-WG-LBk" id="9ti-k7-oI6"/>

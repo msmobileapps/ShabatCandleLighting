@@ -396,7 +396,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9z6-JY-6AI">
-                                <rect key="frame" x="0.0" y="100" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="100" width="354" height="56"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.74901960779999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.91764705879999997" green="0.8862745098" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -406,9 +406,9 @@
                         <constraints>
                             <constraint firstItem="GvY-bW-ORN" firstAttribute="trailing" secondItem="nwL-7R-Hu8" secondAttribute="trailing" constant="8" id="26L-SG-eMx"/>
                             <constraint firstItem="9z6-JY-6AI" firstAttribute="leading" secondItem="GvY-bW-ORN" secondAttribute="leading" id="EKo-Z2-fTR"/>
+                            <constraint firstItem="GvY-bW-ORN" firstAttribute="trailing" secondItem="9z6-JY-6AI" secondAttribute="trailing" constant="60" id="MfL-2X-aNw"/>
                             <constraint firstItem="9z6-JY-6AI" firstAttribute="top" secondItem="nwL-7R-Hu8" secondAttribute="bottom" id="Xcu-oa-dex"/>
                             <constraint firstItem="nwL-7R-Hu8" firstAttribute="leading" secondItem="GvY-bW-ORN" secondAttribute="leading" constant="8" id="ZZV-wE-3oF"/>
-                            <constraint firstItem="9z6-JY-6AI" firstAttribute="trailing" secondItem="GvY-bW-ORN" secondAttribute="trailing" id="ax5-bM-tS3"/>
                             <constraint firstItem="6tn-BZ-zm9" firstAttribute="trailing" secondItem="ZAV-d9-9ga" secondAttribute="trailingMargin" id="bpP-z4-bIc"/>
                             <constraint firstItem="6tn-BZ-zm9" firstAttribute="leading" secondItem="ZAV-d9-9ga" secondAttribute="leadingMargin" id="egI-bF-w81"/>
                             <constraint firstItem="6tn-BZ-zm9" firstAttribute="top" secondItem="9z6-JY-6AI" secondAttribute="bottom" constant="8" id="l71-7C-wy9"/>

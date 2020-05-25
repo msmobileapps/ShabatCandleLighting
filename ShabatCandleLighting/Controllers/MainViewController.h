@@ -10,6 +10,7 @@
 #import "UIView+UIView_CardView.h"
 #import "UIImage+CornerRadius.h"
 #import "CountriesListViewController.h"
+#import "ShabatCandleLighting-Swift.h"
 
 @interface MainViewController : UIViewController
 // Outlets:
@@ -43,7 +44,9 @@
 
 @property NSString *cityName;
 @property BOOL isCountryListShowed;
+@property (nonatomic, strong) NSString * deviceLanguage;
 
+@property (nonatomic, strong) Constants *constants;
 
 
 

@@ -16,12 +16,14 @@
 
 @implementation CountriesListViewController
 
+//Constants *constants;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.language = [[NSLocale preferredLanguages] firstObject];
+    self.deviceLanguage = [[NSLocale preferredLanguages] firstObject];
+    self.constants = Constants.new;
 
     [self loadCitiesListFromTxtFile];
     [self loadCitiesHeListFromTxtFile];
@@ -73,7 +75,7 @@
     } else {
         [self.filteredCountryNames removeAllObjects];
 
-        if ([self.language isEqualToString:@"he-IL"]) {
+        if ([self.deviceLanguage isEqualToString:@"he-IL"]) {
             for (NSString *country in self.countryNamesHe) {
                 NSRange range = [country rangeOfString:searchText options:NSCaseInsensitiveSearch];
                 if (range.location != NSNotFound) {
@@ -100,7 +102,7 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"countriesSelectionCellId" forIndexPath:indexPath];
     NSString *city;
 
-    if ([self.language isEqualToString:@"he-IL"]) {
+    if ([self.deviceLanguage isEqualToString:@"he-IL"]) {
         if (self.isFiltered) {
             city = self.filteredCountryNames[indexPath.row];
         } else {
@@ -114,7 +116,6 @@
         } else {
             city = self.countryNames[indexPath.row];
         }
-        city = [self removecharactersUntilThirdIndex:city];
         city = [self removeNumbersFromString:city];
         cell.textLabel.text = city;
     }
@@ -134,7 +135,7 @@
     if (self.isFiltered) {
         city = self.filteredCountryNames[indexPath.row];
     } else {
-        if ([self.language isEqualToString:@"he-IL"]) {
+        if ([self.deviceLanguage isEqualToString:@"he-IL"]) {
             city = self.countryNamesHe[indexPath.row];
         } else {
             city = self.countryNames[indexPath.row];
@@ -145,15 +146,14 @@
     // save choosen city to user defaults
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
     [userDefaults setObject:cityStringWithoutGaps forKey:@"slectedCityKey"];
-   // [userDefaults setObject:cityStringWithoutGaps forKey:@"slectedCityKey"];
+    [userDefaults setObject:[self getHebrewCityName:city] forKey:@"slectedCityNameKey"];
     [userDefaults synchronize];
     // dissmiss slide menu
     [self.revealViewController rightRevealToggleAnimated:YES];
     // notify that city was choosen
-    NSDictionary *userInfo =
-    [NSDictionary dictionaryWithObject:cityStringWithoutGaps forKey:@"cityNameFromSlideMenu"];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:cityStringWithoutGaps forKey:self.constants.NOTIF_CHOSEN_CITY_KEY];
     [[NSNotificationCenter defaultCenter] postNotificationName:
-     @"cityNameWasChoosen" object:nil userInfo:userInfo];
+     self.constants.NOTIF_CITY_NAME_WAS_CHOOSEN object:nil userInfo:userInfo];
 
     // deselect cell
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -178,8 +178,9 @@
     return [spliteArray lastObject];
 }
 
--(NSString*)removecharactersUntilThirdIndex: (NSString*) cityString {
-    return [cityString stringByReplacingCharactersInRange:NSMakeRange(0, 3) withString:@""];
+-(NSString*)getHebrewCityName: (NSString*) cityString {
+    NSArray* spliteArray = [cityString componentsSeparatedByString: @"|"];
+    return [spliteArray firstObject];
 }
 
 @end

@@ -18,13 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.deviceLanguage = [[NSLocale preferredLanguages] firstObject];
     [self setHiddenLabels];
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     [self setupView];
 
-
+    [self setupImagesForLanguageDirection];
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.ShabbatCandles"];
     NSString *savedCity = [userDefaults stringForKey:@"slectedCityKey"];
 
@@ -119,6 +120,16 @@
     self.titleLabel.hidden = NO;
     self.timeLabel.hidden = NO;
     self.dateLabel.hidden = NO;
+}
+
+
+-(void)setupImagesForLanguageDirection {
+    if ([self.deviceLanguage isEqualToString:@"he-IL"]) {
+        self.backgroundImage.image = [UIImage imageNamed:@"candles_background_widget"];
+    } else {
+        self.backgroundImage.image = [UIImage imageNamed:@"candlecWidgetLTR"];
+
+    }
 }
 
 @end

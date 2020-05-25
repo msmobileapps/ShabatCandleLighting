@@ -18,6 +18,9 @@ typedef void(^completionFailure)(NSError*);
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+
+@property (nonatomic, strong) NSString * deviceLanguage;
 
 
 
